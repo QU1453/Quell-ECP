@@ -16,21 +16,26 @@
 <!-- ============ chrome ============ -->
 <div class="chrome">
   <div class="microbar">
-    <span>Duty &amp; tax included — simulated</span><span class="dot"></span>
-    <span>Insured global shipping</span><span class="dot"></span>
-    <span>Thirty-day returns</span>
+    <span data-i18n="micro.duty">Duty &amp; tax included — simulated</span><span class="dot"></span>
+    <span data-i18n="micro.insure">Insured global shipping</span><span class="dot"></span>
+    <span data-i18n="micro.return">Thirty-day returns</span>
   </div>
   <nav class="nav">
     <a class="brand" href="index.html">Quell<span class="dot">.</span></a>
     <div class="nav-links">
-      <a href="#edit" class="active">Shop</a>
-      <a href="#new">New in</a>
-      <a href="#about">Objects</a>
-      <a href="#values">Journal</a>
+      <a href="#edit" class="active" data-i18n="nav.shop">Shop</a>
+      <a href="#new" data-i18n="nav.new">New in</a>
+      <a href="#about" data-i18n="nav.objects">Objects</a>
+      <a href="#values" data-i18n="nav.journal">Journal</a>
     </div>
     <div class="nav-tools">
+      <div class="langsw" role="group" aria-label="Language">
+        <button data-lang="en" class="on" aria-pressed="true">EN</button>
+        <button data-lang="zh" aria-pressed="false">中文</button>
+        <button data-lang="ja" aria-pressed="false">日本語</button>
+      </div>
       <div class="searchbox" id="searchbox">
-        <input id="search-input" type="search" placeholder="Search the edit…" aria-label="Search">
+        <input id="search-input" type="search" data-i18n-ph="search.ph" placeholder="Search the edit…" aria-label="Search">
         <kbd>↵</kbd>
       </div>
       <button class="tool search-t" aria-label="Search">
@@ -56,40 +61,40 @@
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 5l14 14M19 5 5 19"/></svg>
   </button>
   <nav class="mnav">
-    <a href="#edit"><span class="idx">01</span>Shop</a>
-    <a href="#new"><span class="idx">02</span>New in</a>
-    <a href="#about"><span class="idx">03</span>Objects</a>
-    <a href="#journal"><span class="idx">04</span>Journal</a>
+    <a href="#edit"><span class="idx">01</span><span data-i18n="nav.shop">Shop</span></a>
+    <a href="#new"><span class="idx">02</span><span data-i18n="nav.new">New in</span></a>
+    <a href="#about"><span class="idx">03</span><span data-i18n="nav.objects">Objects</span></a>
+    <a href="#values"><span class="idx">04</span><span data-i18n="nav.journal">Journal</span></a>
   </nav>
-  <div class="menu-foot">Quell — considered goods, found far away.<br>Duty &amp; tax included · simulated environment.</div>
+  <div class="menu-foot" data-i18n-html="menu.foot">Quell — considered goods, found far away.<br>Duty &amp; tax included · simulated environment.</div>
 </div>
 
 <!-- ============ hero ============ -->
 <header class="hero">
   <div class="hero-grid wrap">
     <div>
-      <span class="kicker">The Objects Edit — N°07</span>
-      <h1 class="hero-title">
-        <span class="ln"><span style="--i:0">Objects that</span></span>
-        <span class="ln"><span style="--i:1">cross borders,</span></span>
-        <span class="ln"><span style="--i:2"><em>quietly.</em></span></span>
+      <span class="kicker" data-i18n="hero.kicker">The Objects Edit — N°07</span>
+      <h1 class="hero-title" data-i18n-html="hero.title">
+        <span class="ln"><span>Objects that</span></span>
+        <span class="ln"><span>cross borders,</span></span>
+        <span class="ln"><span><em>quietly.</em></span></span>
       </h1>
-      <p class="hero-copy">A considered edit of ceramics, textiles and tools — gathered from twelve countries, priced with duty and tax included.</p>
-      <div style="margin-top:34px"><a class="lnk" href="#edit">Explore the edit<span class="ar">→</span></a></div>
+      <p class="hero-copy" data-i18n="hero.copy">A considered edit of ceramics, textiles and tools — gathered from twelve countries, priced with duty and tax included.</p>
+      <div style="margin-top:34px"><a class="lnk" href="#edit"><span data-i18n="hero.explore">Explore the edit</span><span class="ar">→</span></a></div>
       <div class="hero-meta">
-        <div class="item"><span class="num">12</span><span class="lbl">Countries sourced</span></div>
-        <div class="item"><span class="num">48h</span><span class="lbl">Dispatch</span></div>
-        <div class="item"><span class="num">30d</span><span class="lbl">Returns</span></div>
+        <div class="item"><span class="num">12</span><span class="lbl" data-i18n="meta.countries">Countries sourced</span></div>
+        <div class="item"><span class="num">48h</span><span class="lbl" data-i18n="meta.dispatch">Dispatch</span></div>
+        <div class="item"><span class="num">30d</span><span class="lbl" data-i18n="meta.returns">Returns</span></div>
       </div>
     </div>
     <div class="hero-side">
       <div class="hero-media">
         <img data-img="sculptural sand-toned ceramic vessel with undulating form standing on travertine block" data-size="portrait_4_3" alt="Sand ceramic vessel">
       </div>
-      <span class="hero-caption">Sand vessel — maker N°02</span>
+      <span class="hero-caption" data-i18n="hero.caption">Sand vessel — maker N°02</span>
     </div>
   </div>
-  <span class="scroll-cue">Scroll</span>
+  <span class="scroll-cue" data-i18n="cue.scroll">Scroll</span>
 </header>
 
 <main>
@@ -98,10 +103,10 @@
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <span class="kicker">Current edit</span>
-          <h2>The edit, <em>as of now</em></h2>
+          <span class="kicker" data-i18n="sec.editK">Current edit</span>
+          <h2 data-i18n-html="sec.editTitle">The edit, <em>as of now</em></h2>
         </div>
-        <a class="lnk" href="#new">View everything<span class="ar">→</span></a>
+        <a class="lnk" href="#new"><span data-i18n="ui.viewAll">View everything</span><span class="ar">→</span></a>
       </div>
       <div class="grid-3" id="edit-grid"></div>
     </div>
@@ -112,12 +117,12 @@
     <div class="sec wrap">
       <div class="band-grid">
         <div>
-          <span class="kicker on-night">Why we ship slowly</span>
-          <p class="statement" style="margin-top:22px">We move on purpose. Most of this will <em>outlast its shipping box</em> — that’s the whole point.</p>
+          <span class="kicker on-night" data-i18n="band.kicker">Why we ship slowly</span>
+          <p class="statement" style="margin-top:22px" data-i18n-html="band.statement">We move on purpose. Most of this will <em>outlast its shipping box</em> — that’s the whole point.</p>
         </div>
         <div class="note">
-          <p>Every piece is chosen in person, priced in one currency, and delivered with duty and tax already settled. What you see is what arrives — no surprises at the door.</p>
-          <p style="margin-top:20px"><a class="btn btn-light" href="product.html?id=lamp">Meet the makers<span class="ar" style="transition:transform .45s var(--ease-out)">→</span></a></p>
+          <p data-i18n="band.note1">Every piece is chosen in person, priced in one currency, and delivered with duty and tax already settled. What you see is what arrives — no surprises at the door.</p>
+          <p style="margin-top:20px"><a class="btn btn-light" href="product.html?id=lamp"><span data-i18n="ui.meetMakers">Meet the makers</span><span class="ar" style="transition:transform .45s var(--ease-out)">→</span></a></p>
         </div>
       </div>
     </div>
@@ -133,10 +138,10 @@
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <span class="kicker">New in</span>
-          <h2>Considered objects, <em>gathered slowly</em></h2>
+          <span class="kicker" data-i18n="sec.newK">New in</span>
+          <h2 data-i18n-html="sec.newTitle">Considered objects, <em>gathered slowly</em></h2>
         </div>
-        <a class="lnk" href="product.html?id=espresso">Start here<span class="ar">→</span></a>
+        <a class="lnk" href="product.html?id=espresso"><span data-i18n="ui.startHere">Start here</span><span class="ar">→</span></a>
       </div>
       <div class="list" id="new-list"></div>
     </div>
@@ -147,13 +152,13 @@
     <div class="wrap split">
       <div class="media rv">
         <img data-img="stacks of undyed linen and wool textiles in warm earth neutral tones" data-size="portrait_4_3" alt="Linen and wool textiles">
-        <span class="stamp">Makers<br>first</span>
+        <span class="stamp" data-i18n-html="about.stamp">Makers<br>first</span>
       </div>
       <div class="words">
-        <span class="kicker">The long view</span>
-        <h2 style="margin-top:18px">Not cheap.<br><em>Just worth it.</em></h2>
-        <p>We don’t chase seasons — we follow workshops that have been chasing perfection for generations. Fewer things, better made, priced once.</p>
-        <a class="lnk" href="#journal">About our makers<span class="ar">→</span></a>
+        <span class="kicker" data-i18n="sec.aboutK">The long view</span>
+        <h2 style="margin-top:18px" data-i18n-html="sec.aboutTitle">Not cheap.<br><em>Just worth it.</em></h2>
+        <p data-i18n="about.para">We don’t chase seasons — we follow workshops that have been chasing perfection for generations. Fewer things, better made, priced once.</p>
+        <a class="lnk" href="#values"><span data-i18n="about.link">About our makers</span><span class="ar">→</span></a>
       </div>
     </div>
   </section>
@@ -161,22 +166,22 @@
   <!-- ============ values ============ -->
   <section class="sec" id="values">
     <div class="wrap">
-      <span class="kicker">The quiet contract</span>
+      <span class="kicker" data-i18n="sec.valuesK">The quiet contract</span>
       <div class="values" style="margin-top:28px">
         <div class="value rv">
           <span class="no">01</span>
-          <h3>Duty &amp; tax, included</h3>
-          <p>The price you see is the price that lands. Duties settled at the source — a simulated ledger for now.</p>
+          <h3 data-i18n="v1t">Duty &amp; tax, included</h3>
+          <p data-i18n="v1p">The price you see is the price that lands. Duties settled at the source — a simulated ledger for now.</p>
         </div>
         <div class="value rv" style="--d:90ms">
           <span class="no">02</span>
-          <h3>Insured, at every step</h3>
-          <p>Every parcel travels insured from bench to doorstep, with a path you can follow all the way.</p>
+          <h3 data-i18n="v2t">Insured, at every step</h3>
+          <p data-i18n="v2p">Every parcel travels insured from bench to doorstep, with a path you can follow all the way.</p>
         </div>
         <div class="value rv" style="--d:180ms">
           <span class="no">03</span>
-          <h3>Returns without fuss</h3>
-          <p>Thirty days, no questions, prepaid label. If it doesn’t earn its place, send it home.</p>
+          <h3 data-i18n="v3t">Returns without fuss</h3>
+          <p data-i18n="v3p">Thirty days, no questions, prepaid label. If it doesn’t earn its place, send it home.</p>
         </div>
       </div>
     </div>
@@ -186,16 +191,16 @@
   <section class="sec news" id="journal">
     <div class="wrap news-inner">
       <div>
-        <span class="kicker">The Journal</span>
-        <h2 style="margin-top:18px">Letters, <em>not spam.</em></h2>
+        <span class="kicker" data-i18n="sec.newsK">The Journal</span>
+        <h2 style="margin-top:18px" data-i18n-html="sec.newsTitle">Letters, <em>not spam.</em></h2>
       </div>
       <div>
-        <p class="note" style="color:var(--ink-soft);margin-bottom:22px">One letter a month — makers’ notes, new pieces, and the occasional essay on why slow is the shortcut.</p>
+        <p class="note" style="color:var(--ink-soft);margin-bottom:22px" data-i18n="news.note">One letter a month — makers’ notes, new pieces, and the occasional essay on why slow is the shortcut.</p>
         <form class="form" id="news-form">
-          <input type="email" required placeholder="Your email address" aria-label="Email address">
-          <button type="submit">Subscribe<span class="ar">→</span></button>
+          <input type="email" required data-i18n-ph="news.ph" placeholder="Your email address" aria-label="Email address">
+          <button type="submit"><span data-i18n="ui.subscribe">Subscribe</span><span class="ar">→</span></button>
         </form>
-        <p class="form-note">No noise. Unsubscribe anytime.</p>
+        <p class="form-note" data-i18n="news.fine">No noise. Unsubscribe anytime.</p>
       </div>
     </div>
   </section>
@@ -206,33 +211,33 @@
   <div class="foot-grid wrap">
     <div>
       <div class="foot-brand">Quell<span class="dot">.</span></div>
-      <p class="foot-desc">Considered goods, found far away. A simulated cross-border commerce platform — the Quell-ECP design preview.</p>
+      <p class="foot-desc" data-i18n="footer.desc">Considered goods, found far away. A simulated cross-border commerce platform — the Quell-ECP design preview.</p>
     </div>
     <div class="foot-col">
-      <div class="ttl">Shop</div>
-      <a href="product.html?id=lamp">Lighting</a>
-      <a href="product.html?id=espresso">Table</a>
-      <a href="product.html?id=throw">Living</a>
-      <a href="#new">Objects</a>
+      <div class="ttl" data-i18n="col.shop">Shop</div>
+      <a data-i18n="f.lighting" href="product.html?id=lamp">Lighting</a>
+      <a data-i18n="f.table" href="product.html?id=espresso">Table</a>
+      <a data-i18n="f.living" href="product.html?id=throw">Living</a>
+      <a data-i18n="f.objects" href="#new">Objects</a>
     </div>
     <div class="foot-col">
-      <div class="ttl">Company</div>
-      <a href="#about">Our makers</a>
-      <a href="#journal">Journal</a>
-      <a href="#values">The contract</a>
-      <a href="#">Careers</a>
+      <div class="ttl" data-i18n="col.company">Company</div>
+      <a data-i18n="f.makers" href="#about">Our makers</a>
+      <a data-i18n="f.journal" href="#journal">Journal</a>
+      <a data-i18n="f.contract" href="#values">The contract</a>
+      <a data-i18n="f.careers" href="#">Careers</a>
     </div>
     <div class="foot-col">
-      <div class="ttl">Support</div>
-      <a href="#">Shipping &amp; duty</a>
-      <a href="#">Returns</a>
-      <a href="#">Contact</a>
-      <a href="#">Account</a>
+      <div class="ttl" data-i18n="col.support">Support</div>
+      <a data-i18n="f.ship" href="#">Shipping &amp; duty</a>
+      <a data-i18n="f.returns" href="#">Returns</a>
+      <a data-i18n="f.contact" href="#">Contact</a>
+      <a data-i18n="f.account" href="#">Account</a>
     </div>
   </div>
   <div class="wrap foot-base">
-    <span>© 2026 Quell-ECP — design preview</span>
-    <span class="fine">No real orders are processed in this preview; checkout and payments are simulated for phase M2 of the build.</span>
+    <span data-i18n="base.copy">© 2026 Quell-ECP — design preview</span>
+    <span class="fine" data-i18n="base.fine">No real orders are processed in this preview; checkout and payments are simulated for phase M2 of the build.</span>
   </div>
 </footer>
 
@@ -240,28 +245,29 @@
 <div class="veil"></div>
 <aside class="bag" id="bag" aria-label="Shopping bag">
   <div class="bag-head">
-    <h3>Your bag</h3>
+    <h3 data-i18n="bag.title">Your bag</h3>
     <button class="bag-close" data-close-bag aria-label="Close bag">
       <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 5l14 14M19 5 5 19"/></svg>
     </button>
   </div>
   <div class="ship-bar">
-    <p class="txt">You're <b>$200</b> away from complimentary shipping</p>
+    <p class="txt"></p>
     <div class="ship-track"><div class="ship-fill"></div></div>
   </div>
   <div class="bag-items">
     <div id="bag-list"></div>
   </div>
   <div class="bag-foot">
-    <div class="bag-total"><span>Subtotal</span><b>$0</b></div>
-    <p class="bag-note">Duty &amp; tax included · insured shipping</p>
-    <button class="btn btn-dark checkout-demo">Checkout — demo<span class="ar">→</span></button>
+    <div class="bag-total"><span data-i18n="bag.subtotal">Subtotal</span><b>$0</b></div>
+    <p class="bag-note" data-i18n="bag.note">Duty &amp; tax included · insured shipping</p>
+    <button class="btn btn-dark checkout-demo"><span data-i18n="bag.checkout">Checkout — demo</span><span class="ar">→</span></button>
     <div style="text-align:center;margin-top:14px">
-      <button class="lnk" data-close-bag style="font-size:11px">Continue browsing</button>
+      <button class="lnk" data-close-bag style="font-size:11px"><span data-i18n="bag.continue">Continue browsing</span></button>
     </div>
   </div>
 </aside>
 
+<script src="assets/i18n.js"></script>
 <script src="assets/shop.js"></script>
 <script src="assets/app.js"></script>
 </body>

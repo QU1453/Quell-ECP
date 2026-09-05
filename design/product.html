@@ -16,21 +16,26 @@
 <!-- ============ chrome ============ -->
 <div class="chrome">
   <div class="microbar">
-    <span>Duty &amp; tax included — simulated</span><span class="dot"></span>
-    <span>Insured global shipping</span><span class="dot"></span>
-    <span>Thirty-day returns</span>
+    <span data-i18n="micro.duty">Duty &amp; tax included — simulated</span><span class="dot"></span>
+    <span data-i18n="micro.insure">Insured global shipping</span><span class="dot"></span>
+    <span data-i18n="micro.return">Thirty-day returns</span>
   </div>
   <nav class="nav">
     <a class="brand" href="index.html">Quell<span class="dot">.</span></a>
     <div class="nav-links">
-      <a href="index.html#edit">Shop</a>
-      <a href="index.html#new">New in</a>
-      <a href="index.html#about">Objects</a>
-      <a href="index.html#journal">Journal</a>
+      <a href="index.html#edit" data-i18n="nav.shop">Shop</a>
+      <a href="index.html#new" data-i18n="nav.new">New in</a>
+      <a href="index.html#about" data-i18n="nav.objects">Objects</a>
+      <a href="index.html#journal" data-i18n="nav.journal">Journal</a>
     </div>
     <div class="nav-tools">
+      <div class="langsw" role="group" aria-label="Language">
+        <button data-lang="en" class="on" aria-pressed="true">EN</button>
+        <button data-lang="zh" aria-pressed="false">中文</button>
+        <button data-lang="ja" aria-pressed="false">日本語</button>
+      </div>
       <div class="searchbox" id="searchbox">
-        <input id="search-input" type="search" placeholder="Search the edit…" aria-label="Search">
+        <input id="search-input" type="search" data-i18n-ph="search.ph" placeholder="Search the edit…" aria-label="Search">
         <kbd>↵</kbd>
       </div>
       <button class="tool search-t" aria-label="Search">
@@ -56,20 +61,20 @@
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 5l14 14M19 5 5 19"/></svg>
   </button>
   <nav class="mnav">
-    <a href="index.html#edit"><span class="idx">01</span>Shop</a>
-    <a href="index.html#new"><span class="idx">02</span>New in</a>
-    <a href="index.html#about"><span class="idx">03</span>Objects</a>
-    <a href="index.html#journal"><span class="idx">04</span>Journal</a>
+    <a href="index.html#edit"><span class="idx">01</span><span data-i18n="nav.shop">Shop</span></a>
+    <a href="index.html#new"><span class="idx">02</span><span data-i18n="nav.new">New in</span></a>
+    <a href="index.html#about"><span class="idx">03</span><span data-i18n="nav.objects">Objects</span></a>
+    <a href="index.html#journal"><span class="idx">04</span><span data-i18n="nav.journal">Journal</span></a>
   </nav>
-  <div class="menu-foot">Quell — considered goods, found far away.<br>Duty &amp; tax included · simulated environment.</div>
+  <div class="menu-foot" data-i18n-html="menu.foot">Quell — considered goods, found far away.<br>Duty &amp; tax included · simulated environment.</div>
 </div>
 
 <!-- ============ product detail ============ -->
 <main>
   <div class="page-head wrap">
     <nav class="breadcrumbs" aria-label="Breadcrumb">
-      <a href="index.html">Home</a><span class="sep">/</span>
-      <a href="index.html#edit">Objects</a><span class="sep">/</span>
+      <a href="index.html" data-i18n="bread.home">Home</a><span class="sep">/</span>
+      <a href="index.html#edit" data-i18n="bread.objects">Objects</a><span class="sep">/</span>
       <span id="crumb">Loading…</span>
     </nav>
   </div>
@@ -80,10 +85,10 @@
     <div class="wrap">
       <div class="sec-head" style="margin-bottom:clamp(28px,5vh,48px)">
         <div>
-          <span class="kicker">Keep looking</span>
-          <h2>You might also <em>consider</em></h2>
+          <span class="kicker" data-i18n="rel.k">Keep looking</span>
+          <h2 data-i18n="rel.title">You might also consider</h2>
         </div>
-        <a class="lnk" href="index.html#edit">Back to the edit<span class="ar">→</span></a>
+        <a class="lnk" href="index.html#edit"><span data-i18n="ui.backEdit">Back to the edit</span><span class="ar">→</span></a>
       </div>
       <div class="grid-4" id="related"></div>
     </div>
@@ -95,33 +100,33 @@
   <div class="foot-grid wrap">
     <div>
       <div class="foot-brand">Quell<span class="dot">.</span></div>
-      <p class="foot-desc">Considered goods, found far away. A simulated cross-border commerce platform — the Quell-ECP design preview.</p>
+      <p class="foot-desc" data-i18n="footer.desc">Considered goods, found far away. A simulated cross-border commerce platform — the Quell-ECP design preview.</p>
     </div>
     <div class="foot-col">
-      <div class="ttl">Shop</div>
-      <a href="product.html?id=lamp">Lighting</a>
-      <a href="product.html?id=espresso">Table</a>
-      <a href="product.html?id=throw">Living</a>
-      <a href="index.html#new">Objects</a>
+      <div class="ttl" data-i18n="col.shop">Shop</div>
+      <a data-i18n="f.lighting" href="product.html?id=lamp">Lighting</a>
+      <a data-i18n="f.table" href="product.html?id=espresso">Table</a>
+      <a data-i18n="f.living" href="product.html?id=throw">Living</a>
+      <a data-i18n="f.objects" href="index.html#new">Objects</a>
     </div>
     <div class="foot-col">
-      <div class="ttl">Company</div>
-      <a href="index.html#about">Our makers</a>
-      <a href="index.html#journal">Journal</a>
-      <a href="index.html#values">The contract</a>
-      <a href="#">Careers</a>
+      <div class="ttl" data-i18n="col.company">Company</div>
+      <a data-i18n="f.makers" href="index.html#about">Our makers</a>
+      <a data-i18n="f.journal" href="index.html#journal">Journal</a>
+      <a data-i18n="f.contract" href="index.html#values">The contract</a>
+      <a data-i18n="f.careers" href="#">Careers</a>
     </div>
     <div class="foot-col">
-      <div class="ttl">Support</div>
-      <a href="#">Shipping &amp; duty</a>
-      <a href="#">Returns</a>
-      <a href="#">Contact</a>
-      <a href="#">Account</a>
+      <div class="ttl" data-i18n="col.support">Support</div>
+      <a data-i18n="f.ship" href="#">Shipping &amp; duty</a>
+      <a data-i18n="f.returns" href="#">Returns</a>
+      <a data-i18n="f.contact" href="#">Contact</a>
+      <a data-i18n="f.account" href="#">Account</a>
     </div>
   </div>
   <div class="wrap foot-base">
-    <span>© 2026 Quell-ECP — design preview</span>
-    <span class="fine">No real orders are processed in this preview; checkout and payments are simulated for phase M2 of the build.</span>
+    <span data-i18n="base.copy">© 2026 Quell-ECP — design preview</span>
+    <span class="fine" data-i18n="base.fine">No real orders are processed in this preview; checkout and payments are simulated for phase M2 of the build.</span>
   </div>
 </footer>
 
@@ -129,28 +134,29 @@
 <div class="veil"></div>
 <aside class="bag" id="bag" aria-label="Shopping bag">
   <div class="bag-head">
-    <h3>Your bag</h3>
+    <h3 data-i18n="bag.title">Your bag</h3>
     <button class="bag-close" data-close-bag aria-label="Close bag">
       <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 5l14 14M19 5 5 19"/></svg>
     </button>
   </div>
   <div class="ship-bar">
-    <p class="txt">You're <b>$200</b> away from complimentary shipping</p>
+    <p class="txt"></p>
     <div class="ship-track"><div class="ship-fill"></div></div>
   </div>
   <div class="bag-items">
     <div id="bag-list"></div>
   </div>
   <div class="bag-foot">
-    <div class="bag-total"><span>Subtotal</span><b>$0</b></div>
-    <p class="bag-note">Duty &amp; tax included · insured shipping</p>
-    <button class="btn btn-dark checkout-demo">Checkout — demo<span class="ar">→</span></button>
+    <div class="bag-total"><span data-i18n="bag.subtotal">Subtotal</span><b>$0</b></div>
+    <p class="bag-note" data-i18n="bag.note">Duty &amp; tax included · insured shipping</p>
+    <button class="btn btn-dark checkout-demo"><span data-i18n="bag.checkout">Checkout — demo</span><span class="ar">→</span></button>
     <div style="text-align:center;margin-top:14px">
-      <button class="lnk" data-close-bag style="font-size:11px">Continue browsing</button>
+      <button class="lnk" data-close-bag style="font-size:11px"><span data-i18n="bag.continue">Continue browsing</span></button>
     </div>
   </div>
 </aside>
 
+<script src="assets/i18n.js"></script>
 <script src="assets/shop.js"></script>
 <script src="assets/app.js"></script>
 </body>

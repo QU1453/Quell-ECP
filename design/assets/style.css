@@ -21,8 +21,8 @@
   --night-line: rgba(242, 238, 229, 0.16);
 
   /* type */
-  --serif: "Fraunces", Georgia, "Times New Roman", serif;
-  --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --serif: "Fraunces", "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", "Yu Mincho", "Hiragino Mincho ProN", Georgia, serif;
+  --sans: "Instrument Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Yu Gothic UI", system-ui, "Helvetica Neue", Arial, sans-serif;
 
   /* motion */
   --ease-out: cubic-bezier(0.22, 0.61, 0.21, 1);
@@ -132,6 +132,11 @@ body::after {
 .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); transform-origin: left; }
 
 .nav-tools { display: flex; align-items: center; gap: 4px; }
+.langsw { display: flex; align-items: center; border: 1px solid var(--line); border-radius: 999px; margin-right: 6px; overflow: hidden; }
+.langsw button { font-size: 10.5px; letter-spacing: 0.05em; padding: 7px 10px; color: var(--ink-soft); transition: color 0.25s, background-color 0.25s; }
+.langsw button:hover { color: var(--ink); }
+.langsw button.on { background: var(--ink); color: var(--paper); }
+.langsw button + button { border-left: 1px solid var(--line); }
 .tool {
   width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%;
   position: relative; transition: background-color 0.3s;
@@ -152,12 +157,13 @@ body::after {
 .searchbox {
   display: grid; grid-template-columns: 1fr auto; align-items: center;
   border-bottom: 1px solid var(--line);
-  opacity: 0; pointer-events: none; transform: translateY(-4px);
-  transition: opacity 0.3s, transform 0.3s;
+  overflow: hidden; width: 0;
+  opacity: 0; pointer-events: none;
+  transition: width 0.45s var(--ease-out), opacity 0.3s;
 }
-.searchbox.on { opacity: 1; pointer-events: auto; transform: none; }
-.searchbox input { border: 0; outline: 0; background: transparent; width: 220px; padding: 8px 2px; font-size: 14px; }
-.searchbox kbd { font-size: 10px; color: var(--ink-soft); }
+.searchbox.on { width: 240px; opacity: 1; pointer-events: auto; }
+.searchbox input { border: 0; outline: 0; background: transparent; width: 100%; min-width: 0; padding: 8px 4px 8px 2px; font-size: 14px; }
+.searchbox kbd { font-size: 10px; color: var(--ink-soft); padding-right: 2px; }
 
 /* mobile hamburger */
 .burger { display: none; }
@@ -259,6 +265,7 @@ body::after {
   display: block; overflow: hidden; padding-bottom: 0.06em; margin-bottom: -0.06em;
 }
 .hero-title .ln span { display: inline-block; transform: translateY(110%); animation: rise-in 1.1s var(--ease-out) forwards; animation-delay: calc(var(--i) * 120ms + 100ms); }
+.hero-title.noanim .ln span { animation: none; transform: none; }
 @keyframes rise-in { to { transform: none; } }
 .hero-title em { font-style: italic; font-weight: 300; }
 
