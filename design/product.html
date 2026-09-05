@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Object — QUELL</title>
+<meta name="description" content="Product detail — Quell-ECP design preview.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23211D16'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-style='italic' font-size='34' fill='%23F2EEE5' text-anchor='middle'%3EQ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- ============ chrome ============ -->
+<div class="chrome">
+  <div class="microbar">
+    <span>Duty &amp; tax included — simulated</span><span class="dot"></span>
+    <span>Insured global shipping</span><span class="dot"></span>
+    <span>Thirty-day returns</span>
+  </div>
+  <nav class="nav">
+    <a class="brand" href="index.html">Quell<span class="dot">.</span></a>
+    <div class="nav-links">
+      <a href="index.html#edit">Shop</a>
+      <a href="index.html#new">New in</a>
+      <a href="index.html#about">Objects</a>
+      <a href="index.html#journal">Journal</a>
+    </div>
+    <div class="nav-tools">
+      <div class="searchbox" id="searchbox">
+        <input id="search-input" type="search" placeholder="Search the edit…" aria-label="Search">
+        <kbd>↵</kbd>
+      </div>
+      <button class="tool search-t" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/></svg>
+      </button>
+      <button class="tool acct-t" aria-label="Account">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg>
+      </button>
+      <button class="tool" data-open-bag aria-label="Bag">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 8h12l1.5 12h-15L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="bag-count">0</span>
+      </button>
+      <button class="tool burger" aria-label="Menu">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+      </button>
+    </div>
+  </nav>
+</div>
+
+<!-- ============ mobile menu ============ -->
+<div class="menu-overlay" id="menu">
+  <button class="tool menu-close" data-menu-close aria-label="Close">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 5l14 14M19 5 5 19"/></svg>
+  </button>
+  <nav class="mnav">
+    <a href="index.html#edit"><span class="idx">01</span>Shop</a>
+    <a href="index.html#new"><span class="idx">02</span>New in</a>
+    <a href="index.html#about"><span class="idx">03</span>Objects</a>
+    <a href="index.html#journal"><span class="idx">04</span>Journal</a>
+  </nav>
+  <div class="menu-foot">Quell — considered goods, found far away.<br>Duty &amp; tax included · simulated environment.</div>
+</div>
+
+<!-- ============ product detail ============ -->
+<main>
+  <div class="page-head wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="index.html">Home</a><span class="sep">/</span>
+      <a href="index.html#edit">Objects</a><span class="sep">/</span>
+      <span id="crumb">Loading…</span>
+    </nav>
+  </div>
+
+  <div id="pdp-root" class="wrap"></div>
+
+  <section class="sec" style="padding-top:0;background:var(--paper)">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:clamp(28px,5vh,48px)">
+        <div>
+          <span class="kicker">Keep looking</span>
+          <h2>You might also <em>consider</em></h2>
+        </div>
+        <a class="lnk" href="index.html#edit">Back to the edit<span class="ar">→</span></a>
+      </div>
+      <div class="grid-4" id="related"></div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ footer ============ -->
+<footer class="site">
+  <div class="foot-grid wrap">
+    <div>
+      <div class="foot-brand">Quell<span class="dot">.</span></div>
+      <p class="foot-desc">Considered goods, found far away. A simulated cross-border commerce platform — the Quell-ECP design preview.</p>
+    </div>
+    <div class="foot-col">
+      <div class="ttl">Shop</div>
+      <a href="product.html?id=lamp">Lighting</a>
+      <a href="product.html?id=espresso">Table</a>
+      <a href="product.html?id=throw">Living</a>
+      <a href="index.html#new">Objects</a>
+    </div>
+    <div class="foot-col">
+      <div class="ttl">Company</div>
+      <a href="index.html#about">Our makers</a>
+      <a href="index.html#journal">Journal</a>
+      <a href="index.html#values">The contract</a>
+      <a href="#">Careers</a>
+    </div>
+    <div class="foot-col">
+      <div class="ttl">Support</div>
+      <a href="#">Shipping &amp; duty</a>
+      <a href="#">Returns</a>
+      <a href="#">Contact</a>
+      <a href="#">Account</a>
+    </div>
+  </div>
+  <div class="wrap foot-base">
+    <span>© 2026 Quell-ECP — design preview</span>
+    <span class="fine">No real orders are processed in this preview; checkout and payments are simulated for phase M2 of the build.</span>
+  </div>
+</footer>
+
+<!-- ============ bag drawer ============ -->
+<div class="veil"></div>
+<aside class="bag" id="bag" aria-label="Shopping bag">
+  <div class="bag-head">
+    <h3>Your bag</h3>
+    <button class="bag-close" data-close-bag aria-label="Close bag">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 5l14 14M19 5 5 19"/></svg>
+    </button>
+  </div>
+  <div class="ship-bar">
+    <p class="txt">You're <b>$200</b> away from complimentary shipping</p>
+    <div class="ship-track"><div class="ship-fill"></div></div>
+  </div>
+  <div class="bag-items">
+    <div id="bag-list"></div>
+  </div>
+  <div class="bag-foot">
+    <div class="bag-total"><span>Subtotal</span><b>$0</b></div>
+    <p class="bag-note">Duty &amp; tax included · insured shipping</p>
+    <button class="btn btn-dark checkout-demo">Checkout — demo<span class="ar">→</span></button>
+    <div style="text-align:center;margin-top:14px">
+      <button class="lnk" data-close-bag style="font-size:11px">Continue browsing</button>
+    </div>
+  </div>
+</aside>
+
+<script src="assets/shop.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

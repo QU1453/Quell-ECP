@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QUELL — Considered goods from across the world</title>
+<meta name="description" content="A considered edit of ceramics, textiles and objects — gathered from twelve countries. Design preview for Quell-ECP.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23211D16'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-style='italic' font-size='34' fill='%23F2EEE5' text-anchor='middle'%3EQ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- ============ chrome ============ -->
+<div class="chrome">
+  <div class="microbar">
+    <span>Duty &amp; tax included — simulated</span><span class="dot"></span>
+    <span>Insured global shipping</span><span class="dot"></span>
+    <span>Thirty-day returns</span>
+  </div>
+  <nav class="nav">
+    <a class="brand" href="index.html">Quell<span class="dot">.</span></a>
+    <div class="nav-links">
+      <a href="#edit" class="active">Shop</a>
+      <a href="#new">New in</a>
+      <a href="#about">Objects</a>
+      <a href="#values">Journal</a>
+    </div>
+    <div class="nav-tools">
+      <div class="searchbox" id="searchbox">
+        <input id="search-input" type="search" placeholder="Search the edit…" aria-label="Search">
+        <kbd>↵</kbd>
+      </div>
+      <button class="tool search-t" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/></svg>
+      </button>
+      <button class="tool acct-t" aria-label="Account">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg>
+      </button>
+      <button class="tool" data-open-bag aria-label="Bag">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 8h12l1.5 12h-15L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="bag-count">0</span>
+      </button>
+      <button class="tool burger" aria-label="Menu">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+      </button>
+    </div>
+  </nav>
+</div>
+
+<!-- ============ mobile menu ============ -->
+<div class="menu-overlay" id="menu">
+  <button class="tool menu-close" data-menu-close aria-label="Close">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 5l14 14M19 5 5 19"/></svg>
+  </button>
+  <nav class="mnav">
+    <a href="#edit"><span class="idx">01</span>Shop</a>
+    <a href="#new"><span class="idx">02</span>New in</a>
+    <a href="#about"><span class="idx">03</span>Objects</a>
+    <a href="#journal"><span class="idx">04</span>Journal</a>
+  </nav>
+  <div class="menu-foot">Quell — considered goods, found far away.<br>Duty &amp; tax included · simulated environment.</div>
+</div>
+
+<!-- ============ hero ============ -->
+<header class="hero">
+  <div class="hero-grid wrap">
+    <div>
+      <span class="kicker">The Objects Edit — N°07</span>
+      <h1 class="hero-title">
+        <span class="ln"><span style="--i:0">Objects that</span></span>
+        <span class="ln"><span style="--i:1">cross borders,</span></span>
+        <span class="ln"><span style="--i:2"><em>quietly.</em></span></span>
+      </h1>
+      <p class="hero-copy">A considered edit of ceramics, textiles and tools — gathered from twelve countries, priced with duty and tax included.</p>
+      <div style="margin-top:34px"><a class="lnk" href="#edit">Explore the edit<span class="ar">→</span></a></div>
+      <div class="hero-meta">
+        <div class="item"><span class="num">12</span><span class="lbl">Countries sourced</span></div>
+        <div class="item"><span class="num">48h</span><span class="lbl">Dispatch</span></div>
+        <div class="item"><span class="num">30d</span><span class="lbl">Returns</span></div>
+      </div>
+    </div>
+    <div class="hero-side">
+      <div class="hero-media">
+        <img data-img="sculptural sand-toned ceramic vessel with undulating form standing on travertine block" data-size="portrait_4_3" alt="Sand ceramic vessel">
+      </div>
+      <span class="hero-caption">Sand vessel — maker N°02</span>
+    </div>
+  </div>
+  <span class="scroll-cue">Scroll</span>
+</header>
+
+<main>
+  <!-- ============ current edit ============ -->
+  <section class="sec" id="edit">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="kicker">Current edit</span>
+          <h2>The edit, <em>as of now</em></h2>
+        </div>
+        <a class="lnk" href="#new">View everything<span class="ar">→</span></a>
+      </div>
+      <div class="grid-3" id="edit-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ dark statement band ============ -->
+  <section class="band">
+    <div class="sec wrap">
+      <div class="band-grid">
+        <div>
+          <span class="kicker on-night">Why we ship slowly</span>
+          <p class="statement" style="margin-top:22px">We move on purpose. Most of this will <em>outlast its shipping box</em> — that’s the whole point.</p>
+        </div>
+        <div class="note">
+          <p>Every piece is chosen in person, priced in one currency, and delivered with duty and tax already settled. What you see is what arrives — no surprises at the door.</p>
+          <p style="margin-top:20px"><a class="btn btn-light" href="product.html?id=lamp">Meet the makers<span class="ar" style="transition:transform .45s var(--ease-out)">→</span></a></p>
+        </div>
+      </div>
+    </div>
+    <div class="ticker">
+      <div class="ticker-track">
+        <span>Kobe</span><span>Copenhagen</span><span>Seoul</span><span>Milan</span><span>Lisbon</span><span>Mexico City</span><span>Kyoto</span><span>Oslo</span><span>Kobe</span><span>Copenhagen</span><span>Seoul</span><span>Milan</span><span>Lisbon</span><span>Mexico City</span><span>Kyoto</span><span>Oslo</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ new arrivals (editorial list) ============ -->
+  <section class="sec" id="new">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="kicker">New in</span>
+          <h2>Considered objects, <em>gathered slowly</em></h2>
+        </div>
+        <a class="lnk" href="product.html?id=espresso">Start here<span class="ar">→</span></a>
+      </div>
+      <div class="list" id="new-list"></div>
+    </div>
+  </section>
+
+  <!-- ============ about split ============ -->
+  <section class="sec" id="about" style="background:var(--card)">
+    <div class="wrap split">
+      <div class="media rv">
+        <img data-img="stacks of undyed linen and wool textiles in warm earth neutral tones" data-size="portrait_4_3" alt="Linen and wool textiles">
+        <span class="stamp">Makers<br>first</span>
+      </div>
+      <div class="words">
+        <span class="kicker">The long view</span>
+        <h2 style="margin-top:18px">Not cheap.<br><em>Just worth it.</em></h2>
+        <p>We don’t chase seasons — we follow workshops that have been chasing perfection for generations. Fewer things, better made, priced once.</p>
+        <a class="lnk" href="#journal">About our makers<span class="ar">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ values ============ -->
+  <section class="sec" id="values">
+    <div class="wrap">
+      <span class="kicker">The quiet contract</span>
+      <div class="values" style="margin-top:28px">
+        <div class="value rv">
+          <span class="no">01</span>
+          <h3>Duty &amp; tax, included</h3>
+          <p>The price you see is the price that lands. Duties settled at the source — a simulated ledger for now.</p>
+        </div>
+        <div class="value rv" style="--d:90ms">
+          <span class="no">02</span>
+          <h3>Insured, at every step</h3>
+          <p>Every parcel travels insured from bench to doorstep, with a path you can follow all the way.</p>
+        </div>
+        <div class="value rv" style="--d:180ms">
+          <span class="no">03</span>
+          <h3>Returns without fuss</h3>
+          <p>Thirty days, no questions, prepaid label. If it doesn’t earn its place, send it home.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ journal / newsletter ============ -->
+  <section class="sec news" id="journal">
+    <div class="wrap news-inner">
+      <div>
+        <span class="kicker">The Journal</span>
+        <h2 style="margin-top:18px">Letters, <em>not spam.</em></h2>
+      </div>
+      <div>
+        <p class="note" style="color:var(--ink-soft);margin-bottom:22px">One letter a month — makers’ notes, new pieces, and the occasional essay on why slow is the shortcut.</p>
+        <form class="form" id="news-form">
+          <input type="email" required placeholder="Your email address" aria-label="Email address">
+          <button type="submit">Subscribe<span class="ar">→</span></button>
+        </form>
+        <p class="form-note">No noise. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ footer ============ -->
+<footer class="site">
+  <div class="foot-grid wrap">
+    <div>
+      <div class="foot-brand">Quell<span class="dot">.</span></div>
+      <p class="foot-desc">Considered goods, found far away. A simulated cross-border commerce platform — the Quell-ECP design preview.</p>
+    </div>
+    <div class="foot-col">
+      <div class="ttl">Shop</div>
+      <a href="product.html?id=lamp">Lighting</a>
+      <a href="product.html?id=espresso">Table</a>
+      <a href="product.html?id=throw">Living</a>
+      <a href="#new">Objects</a>
+    </div>
+    <div class="foot-col">
+      <div class="ttl">Company</div>
+      <a href="#about">Our makers</a>
+      <a href="#journal">Journal</a>
+      <a href="#values">The contract</a>
+      <a href="#">Careers</a>
+    </div>
+    <div class="foot-col">
+      <div class="ttl">Support</div>
+      <a href="#">Shipping &amp; duty</a>
+      <a href="#">Returns</a>
+      <a href="#">Contact</a>
+      <a href="#">Account</a>
+    </div>
+  </div>
+  <div class="wrap foot-base">
+    <span>© 2026 Quell-ECP — design preview</span>
+    <span class="fine">No real orders are processed in this preview; checkout and payments are simulated for phase M2 of the build.</span>
+  </div>
+</footer>
+
+<!-- ============ bag drawer ============ -->
+<div class="veil"></div>
+<aside class="bag" id="bag" aria-label="Shopping bag">
+  <div class="bag-head">
+    <h3>Your bag</h3>
+    <button class="bag-close" data-close-bag aria-label="Close bag">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 5l14 14M19 5 5 19"/></svg>
+    </button>
+  </div>
+  <div class="ship-bar">
+    <p class="txt">You're <b>$200</b> away from complimentary shipping</p>
+    <div class="ship-track"><div class="ship-fill"></div></div>
+  </div>
+  <div class="bag-items">
+    <div id="bag-list"></div>
+  </div>
+  <div class="bag-foot">
+    <div class="bag-total"><span>Subtotal</span><b>$0</b></div>
+    <p class="bag-note">Duty &amp; tax included · insured shipping</p>
+    <button class="btn btn-dark checkout-demo">Checkout — demo<span class="ar">→</span></button>
+    <div style="text-align:center;margin-top:14px">
+      <button class="lnk" data-close-bag style="font-size:11px">Continue browsing</button>
+    </div>
+  </div>
+</aside>
+
+<script src="assets/shop.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
