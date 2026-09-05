@@ -62,6 +62,13 @@ h1, h2, h3, .serif { font-family: var(--serif); font-weight: 400; letter-spacing
   font-weight: 500;
 }
 
+/* inline multi-language tokens: show only the active language.
+   Driven by <html lang> (set by i18n), no JS text rewriting needed. */
+.tr { display: none; }
+html[lang="en"] .tr[data-l="en"],
+html[lang="zh-CN"] .tr[data-l="zh"],
+html[lang="ja"] .tr[data-l="ja"] { display: inline; }
+
 /* grain */
 body::after {
   content: "";
