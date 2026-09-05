@@ -467,8 +467,10 @@
     document.documentElement.lang = lang === "zh" ? "zh-CN" : lang === "ja" ? "ja" : "en";
 
     document.querySelectorAll("[data-i18n]").forEach((el) => {
-      const v = text(el.dataset.i18n);
-      if (v != null) el.textContent = v;
+      const k = el.dataset.i18n;
+      const v = text(k);
+      // Always write a resolved value: never leave stale/fallback content or a raw key.
+      el.textContent = v != null ? v : (S.en[k] || "");
     });
     document.querySelectorAll("[data-i18n-ph]").forEach((el) => {
       const v = text(el.dataset.i18nPh);
