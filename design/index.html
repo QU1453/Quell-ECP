@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=6">
+<link rel="stylesheet" href="assets/style.css?v=7">
 </head>
 <body>
 
@@ -29,13 +29,6 @@
       <a href="#values"><span class="tr" data-l="en">Journal</span><span class="tr" data-l="zh">手记</span><span class="tr" data-l="ja">ジャーナル</span></a>
     </div>
     <div class="nav-tools">
-      <div class="searchbox" id="searchbox">
-        <input id="search-input" type="search" data-i18n-ph="search.ph" placeholder="Search the edit…" aria-label="Search">
-        <kbd>↵</kbd>
-      </div>
-      <button class="tool search-t" aria-label="Search">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/></svg>
-      </button>
       <button class="tool acct-t" aria-label="Account">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg>
       </button>
@@ -48,6 +41,15 @@
       </button>
     </div>
   </nav>
+  <div class="searchrow">
+    <div class="wrap searchrow-in">
+      <form class="sline" role="search">
+        <svg class="s-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/></svg>
+        <input id="search-input" type="search" data-i18n-ph="search.ph" placeholder="Search the edit…" aria-label="Search the edit">
+        <kbd>↵</kbd>
+      </form>
+    </div>
+  </div>
 </div>
 
 <!-- ============ mobile menu ============ -->
@@ -274,8 +276,8 @@
   </div>
 </div>
 
-<script src="assets/i18n.js?v=6"></script>
-<script src="assets/shop.js?v=6"></script>
-<script src="assets/app.js?v=6"></script>
+<script src="assets/i18n.js?v=7"></script>
+<script src="assets/shop.js?v=7"></script>
+<script src="assets/app.js?v=7"></script>
 </body>
 </html>

@@ -264,14 +264,6 @@
       return;
     }
 
-    if (el.closest(".tool.search-t")) {
-      const searchBox = $("#searchbox");
-      if (searchBox) {
-        searchBox.classList.toggle("on");
-        if (searchBox.classList.contains("on")) { const inp = $("input", searchBox); if (inp) inp.focus(); }
-      }
-      return;
-    }
     if (el.closest(".tool.acct-t")) { toast(t("t.acct"), t("t.acctSub")); return; }
     if (el.closest(".btn.checkout-demo")) { toast(t("t.checkout"), t("t.checkoutSub")); return; }
     if (el.closest('a[href="#"]')) { e.preventDefault(); toast(t("t.link"), t("t.linkSub")); }
@@ -289,8 +281,16 @@
   const searchInput = $("#search-input");
   if (searchInput) {
     searchInput.addEventListener("keydown", (ev) => {
-      if (ev.key === "Enter") { toast(t("t.search"), t("t.searchSub")); searchInput.value = ""; }
+      if (ev.key === "Enter") {
+        ev.preventDefault();
+        toast(t("t.search"), t("t.searchSub"));
+        searchInput.value = "";
+      }
     });
+  }
+  const searchForm = searchInput && searchInput.closest("form");
+  if (searchForm) {
+    searchForm.addEventListener("submit", (ev) => { ev.preventDefault(); });
   }
 
   /* ---------- language refresh for bag text ---------- */
