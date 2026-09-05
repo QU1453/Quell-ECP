@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=5">
+<link rel="stylesheet" href="assets/style.css?v=6">
 </head>
 <body>
 
@@ -129,7 +129,7 @@
 <div class="veil"></div>
 <aside class="bag" id="bag" aria-label="Shopping bag">
   <div class="bag-head">
-    <h3 data-i18n="bag.title">Your bag</h3>
+    <h3><span class="tr" data-l="en">Your bag</span><span class="tr" data-l="zh">购物袋</span><span class="tr" data-l="ja">バッグ</span></h3>
     <button class="bag-close" data-close-bag aria-label="Close bag">
       <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 5l14 14M19 5 5 19"/></svg>
     </button>
@@ -142,11 +142,11 @@
     <div id="bag-list"></div>
   </div>
   <div class="bag-foot">
-    <div class="bag-total"><span data-i18n="bag.subtotal">Subtotal</span><b>$0</b></div>
-    <p class="bag-note" data-i18n="bag.note">Duty &amp; tax included · insured shipping</p>
-    <button class="btn btn-dark checkout-demo"><span data-i18n="bag.checkout">Checkout — demo</span><span class="ar">→</span></button>
+    <div class="bag-total"><span><span class="tr" data-l="en">Subtotal</span><span class="tr" data-l="zh">小计</span><span class="tr" data-l="ja">小計</span></span><b>$0</b></div>
+    <p class="bag-note"><span class="tr" data-l="en">Duty &amp; tax included · insured shipping</span><span class="tr" data-l="zh">关税与税费已包含 · 全程投保</span><span class="tr" data-l="ja">関税・税込み · 保険付き配送</span></p>
+    <button class="btn btn-dark checkout-demo"><span><span class="tr" data-l="en">Checkout — demo</span><span class="tr" data-l="zh">结算 — 演示</span><span class="tr" data-l="ja">チェックアウト — デモ</span></span><span class="ar">→</span></button>
     <div style="text-align:center;margin-top:14px">
-      <button class="lnk" data-close-bag style="font-size:11px"><span data-i18n="bag.continue">Continue browsing</span></button>
+      <button class="lnk" data-close-bag style="font-size:11px"><span class="tr" data-l="en">Continue browsing</span><span class="tr" data-l="zh">继续逛逛</span><span class="tr" data-l="ja">買い物を続ける</span></button>
     </div>
   </div>
 </aside>
@@ -163,8 +163,8 @@
   </div>
 </div>
 
-<script src="assets/i18n.js?v=5"></script>
-<script src="assets/shop.js?v=5"></script>
-<script src="assets/app.js?v=5"></script>
+<script src="assets/i18n.js?v=6"></script>
+<script src="assets/shop.js?v=6"></script>
+<script src="assets/app.js?v=6"></script>
 </body>
 </html>

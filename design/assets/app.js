@@ -155,6 +155,8 @@
       d.dataset.key = key;
       d.dataset.qty = String(item.qty || 1);
       d.dataset.price = String(item.price);
+      if (item.pid) d.dataset.pid = String(item.pid);
+      if (item.ci != null) d.dataset.ci = String(item.ci);
       d.innerHTML =
         '<div class="thumb"><img alt="' + (item.alt || "") + '" src="' + item.img + '"></div>' +
         '<div><div class="top"><div><div class="nm">' + item.name + "</div>" +
@@ -197,7 +199,11 @@
   };
 
   const addProduct = (detail) => {
-    addLine({ name: detail.name, price: +detail.price, img: scene(detail.img) + "square_hd", variant: detail.variant, alt: detail.alt || detail.name, qty: +detail.qty || 1 });
+    addLine({
+      name: detail.name, price: +detail.price, img: scene(detail.img) + "square_hd",
+      variant: detail.variant, alt: detail.alt || detail.name, qty: +detail.qty || 1,
+      pid: detail.pid, ci: detail.ci != null ? parseInt(detail.ci, 10) : null
+    });
     bumpCount();
     toast(t("t.added"), detail.name);
   };
@@ -224,6 +230,7 @@
       const qtyN = $(".qty .n");
       const detail = Object.assign({}, root ? root.dataset : {}, {
         qty: qtyN ? parseInt(qtyN.textContent, 10) : 1,
+        ci: chip ? parseInt(chip.dataset.i || "0", 10) : (root && root.dataset.ci != null ? parseInt(root.dataset.ci, 10) : 0),
         variant: chip ? chip.dataset.val : (root ? root.dataset.variant : "Standard")
       });
       addProduct(detail);
@@ -287,8 +294,21 @@
   }
 
   /* ---------- language refresh for bag text ---------- */
+  const localizeLine = (line) => {
+    const pid = line.dataset.pid;
+    if (!pid || !window.QUEL_CAT) return;
+    const prod = QUEL_CAT.find((x) => x.id === pid);
+    if (!prod) return;
+    const nm = $(".nm", line);
+    if (nm) nm.textContent = QUEL_PICK(prod.name);
+    const ci = parseInt(line.dataset.ci || "0", 10);
+    const col = prod.colors[ci] || prod.colors[0];
+    const vr = $(".vr", line);
+    if (vr && col) vr.textContent = QUEL_PICK(col.l);
+  };
   const refreshUI = () => {
     $$(".rm", bag || document).forEach((b) => { b.textContent = t("bag.remove"); });
+    $$(".line", bag || document).forEach(localizeLine);
     bagTotal();
     countLines();
   };

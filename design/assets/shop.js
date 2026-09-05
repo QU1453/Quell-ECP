@@ -156,6 +156,7 @@
   /* ---------- card ---------- */
   const cardHTML = (p, i, noAnim) => `
     <article class="card rv ${noAnim ? "in" : ""}" style="--d:${i * 90}ms"
+      data-pid="${p.id}" data-ci="0"
       data-name="${pick(p.name)}" data-price="${p.price}" data-img="${p.img}" data-alt="${pick(p.name)}"
       data-variant="${pick(p.colors[0].l)}">
       <a class="card-media" href="product.html?id=${p.id}" aria-label="${pick(p.name)}">
@@ -186,14 +187,14 @@
   /* ---------- PDP ---------- */
   const pdpHTML = (p) => {
     const dots = p.colors
-      .map((c, i) => `<button class="chip swatch ${i === 0 ? "on" : ""}" data-val="${pick(c.l)}" style="background:${c.h}" aria-label="${pick(c.l)}"></button>`)
+      .map((c, i) => `<button class="chip swatch ${i === 0 ? "on" : ""}" data-val="${pick(c.l)}" data-i="${i}" style="background:${c.h}" aria-label="${pick(c.l)}"></button>`)
       .join("");
     const thumbs = [p.img, p.img2]
       .map((src, i) => `<button class="${i === 0 ? "on" : ""}" data-src="${imgURL(src)}" aria-label="View ${i + 1}"><img src="${imgURL(src)}" alt="" loading="lazy"></button>`)
       .join("");
 
     return `
-    <div class="pdp" data-name="${pick(p.name)}" data-price="${p.price}" data-img="${p.img}" data-alt="${pick(p.name)}">
+    <div class="pdp" data-pid="${p.id}" data-name="${pick(p.name)}" data-price="${p.price}" data-img="${p.img}" data-alt="${pick(p.name)}">
       <div class="pdp-media">
         <div class="thumbs">${thumbs}</div>
         <div class="stage"><img src="${imgURL(p.img)}" alt="${pick(p.name)}">
@@ -283,6 +284,10 @@
 
   if (window.I18N) I18N.onChange(renderAll);
   renderAll();
+
+  /* expose catalog + localizer for app.js (bag lines re-localize on switch) */
+  window.QUEL_CAT = CATALOG;
+  window.QUEL_PICK = pick;
 
   /* styles used by JS-rendered bits */
   const st = document.createElement("style");
