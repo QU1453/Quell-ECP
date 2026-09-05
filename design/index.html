@@ -29,11 +29,6 @@
       <a href="#values" data-i18n="nav.journal">Journal</a>
     </div>
     <div class="nav-tools">
-      <div class="langsw" role="group" aria-label="Language">
-        <button data-lang="en" class="on" aria-pressed="true">EN</button>
-        <button data-lang="zh" aria-pressed="false">中文</button>
-        <button data-lang="ja" aria-pressed="false">日本語</button>
-      </div>
       <div class="searchbox" id="searchbox">
         <input id="search-input" type="search" data-i18n-ph="search.ph" placeholder="Search the edit…" aria-label="Search">
         <kbd>↵</kbd>
@@ -266,6 +261,18 @@
     </div>
   </div>
 </aside>
+
+<!-- ============ floating language switch ============ -->
+<div class="langfab" id="langfab" aria-label="Language">
+  <button class="core" id="langfab-core" aria-expanded="false" aria-haspopup="true" aria-label="Switch language">
+    <span id="lang-code">EN</span>
+  </button>
+  <div class="langpop" role="menu">
+    <button role="menuitemradio" data-lang="en" class="on" aria-checked="true"><span>English</span><span class="code">EN</span></button>
+    <button role="menuitemradio" data-lang="zh" aria-checked="false"><span>中文</span><span class="code">中</span></button>
+    <button role="menuitemradio" data-lang="ja" aria-checked="false"><span>日本語</span><span class="code">日</span></button>
+  </div>
+</div>
 
 <script src="assets/i18n.js"></script>
 <script src="assets/shop.js"></script>

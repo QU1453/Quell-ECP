@@ -411,9 +411,13 @@
 
   const mark = () => {
     document.querySelectorAll("[data-lang]").forEach((b) => {
-      b.classList.toggle("on", b.dataset.lang === lang);
-      if (b.hasAttribute("aria-pressed")) b.setAttribute("aria-pressed", String(b.dataset.lang === lang));
+      const active = b.dataset.lang === lang;
+      b.classList.toggle("on", active);
+      if (b.hasAttribute("aria-pressed")) b.setAttribute("aria-pressed", String(active));
+      if (b.hasAttribute("aria-checked")) b.setAttribute("aria-checked", String(active));
     });
+    const codeEl = document.getElementById("lang-code");
+    if (codeEl) codeEl.textContent = { en: "EN", zh: "中", ja: "日" }[lang];
   };
 
   const apply = (isSwitch) => {
@@ -455,9 +459,36 @@
 
   window.I18N = { set, get, m, onChange, text };
 
-  /* language switcher bindings (chrome shell exists in DOM at this point) */
+  /* floating language fab */
+  const fab = document.getElementById("langfab");
+  const closePop = () => {
+    if (!fab) return;
+    fab.classList.remove("open");
+    const core = fab.querySelector("#langfab-core");
+    if (core) core.setAttribute("aria-expanded", "false");
+  };
+  const togglePop = () => {
+    if (!fab) return;
+    const opening = !fab.classList.contains("open");
+    fab.classList.toggle("open", opening);
+    const core = fab.querySelector("#langfab-core");
+    if (core) core.setAttribute("aria-expanded", String(opening));
+  };
+  if (fab) {
+    const core = fab.querySelector("#langfab-core");
+    if (core) core.addEventListener("click", (e) => { e.stopPropagation(); togglePop(); });
+    fab.querySelectorAll("[data-lang]").forEach((b) =>
+      b.addEventListener("click", () => closePop())
+    );
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest("#langfab")) closePop();
+    });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closePop(); });
+  }
+
+  /* language switcher rows (chrome shell exists in DOM at this point) */
   document.querySelectorAll("[data-lang]").forEach((b) =>
-    b.addEventListener("click", () => { set(b.dataset.lang); })
+    b.addEventListener("click", () => { set(b.dataset.lang); closePop(); })
   );
 
   apply(false);
