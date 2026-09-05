@@ -278,6 +278,7 @@
       CATALOG.filter((x) => x.id !== current.id).slice(0, 4).forEach((o, i) => relRoot.insertAdjacentHTML("beforeend", cardHTML(o, i, noAnim)));
     }
     if (first) first = false;
+    if (window.I18N && I18N.augment) I18N.augment();
   };
 
   if (window.I18N) I18N.onChange(renderAll);

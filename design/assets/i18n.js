@@ -397,15 +397,39 @@
   };
 
   const KEY_LANGS = ["en", "zh", "ja"];
-  const store = (() => { try { return localStorage.getItem("quell-lang"); } catch (e) { return null; } })();
-  let lang = KEY_LANGS.includes(store) ? store : "en";
+
+  const readStore = () => {
+    try {
+      const v = localStorage.getItem("quell-lang");
+      if (KEY_LANGS.includes(v)) return v;
+    } catch (e) { /* storage blocked (sandbox/iframe) */ }
+    try {
+      const m = document.cookie.match(new RegExp("(?:^|; )quell_lang=([^;]*)"));
+      if (m && KEY_LANGS.includes(decodeURIComponent(m[1]))) return decodeURIComponent(m[1]);
+    } catch (e) { /* noop */ }
+    return null;
+  };
+  const writeStore = (l) => {
+    try { localStorage.setItem("quell-lang", l); } catch (e) { /* noop */ }
+    try { document.cookie = "quell_lang=" + l + ";path=/;max-age=31536000;SameSite=Lax"; } catch (e) { /* noop */ }
+  };
+
+  let lang = "en";
+  (() => {
+    try {
+      const q = new URLSearchParams(location.search).get("lang");
+      if (KEY_LANGS.includes(q)) { lang = q; return; }
+    } catch (e) { /* noop */ }
+    const s = readStore();
+    if (s) lang = s;
+  })();
   const subs = [];
 
   const text = (k, l) => (l || lang) && S[l || lang][k];
   const set = (l) => {
     if (!KEY_LANGS.includes(l) || l === lang) { mark(); return; }
     lang = l;
-    try { localStorage.setItem("quell-lang", l); } catch (e) { /* noop */ }
+    writeStore(l);
     apply(true);
   };
 
@@ -418,6 +442,25 @@
     });
     const codeEl = document.getElementById("lang-code");
     if (codeEl) codeEl.textContent = { en: "EN", zh: "中", ja: "日" }[lang];
+  };
+
+  /* keep the chosen language when navigating between pages:
+     append ?lang= to same-site .html links, so the next page loads
+     in the same language even if localStorage/cookies are blocked. */
+  const augmentLinks = () => {
+    document.querySelectorAll("a[href]").forEach((a) => {
+      const h = a.getAttribute("href");
+      if (!h || h.indexOf(".html") === -1) return;
+      if (/^(https?:|mailto:|tel:)/.test(h)) return;
+      try {
+        const u = new URL(h, location.href);
+        if (u.origin !== location.origin) return;
+        u.searchParams.set("lang", lang);
+        const file = u.pathname.split("/").pop();
+        const rel = (h.indexOf("./") === 0 ? "./" : "") + file + (u.search || "") + (u.hash || "");
+        a.setAttribute("href", rel);
+      } catch (e) { /* keep original href */ }
+    });
   };
 
   const apply = (isSwitch) => {
@@ -446,6 +489,7 @@
     }
     mark();
     subs.forEach((fn) => { try { fn(); } catch (e) { /* keep going */ } });
+    augmentLinks();
   };
 
   const onChange = (fn) => subs.push(fn);
@@ -457,7 +501,7 @@
     return v;
   };
 
-  window.I18N = { set, get, m, onChange, text };
+  window.I18N = { set, get, m, onChange, text, augment: augmentLinks };
 
   /* floating language fab */
   const fab = document.getElementById("langfab");
