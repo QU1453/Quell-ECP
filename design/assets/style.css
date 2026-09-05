@@ -35,7 +35,7 @@
   /* fixed header heights (micro + main nav + search row) */
   --h-micro: 34px;
   --h-nav: 76px;
-  --h-search: 66px;
+  --h-search: 60px;
   --chrome-h: calc(var(--h-micro) + var(--h-nav) + var(--h-search));
 }
 
@@ -124,15 +124,17 @@ body::after {
 
 .nav {
   height: 76px;
-  display: flex; align-items: center; justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
   padding-inline: var(--pad-x);
-  gap: 24px;
 }
-.brand { font-family: var(--serif); font-size: 27px; letter-spacing: 0.01em; line-height: 1; position: relative; }
+.brand { font-family: var(--serif); font-size: 27px; letter-spacing: 0.01em; line-height: 1; position: relative; justify-self: start; }
 .brand i { font-style: italic; font-size: 0.72em; }
 .brand .dot { color: var(--accent); }
 
-.nav-links { display: flex; gap: clamp(20px, 3vw, 42px); position: absolute; left: 50%; transform: translateX(-50%); }
+.nav-links { display: flex; gap: clamp(18px, 2.6vw, 42px); justify-self: center; }
 .nav-links a {
   font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500;
   position: relative; padding: 6px 1px;
@@ -144,7 +146,7 @@ body::after {
 }
 .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); transform-origin: left; }
 
-.nav-tools { display: flex; align-items: center; gap: 4px; }
+.nav-tools { display: flex; align-items: center; gap: 4px; justify-self: end; }
 /* floating language switch */
 .langfab { position: fixed; right: 18px; bottom: calc(18px + env(safe-area-inset-bottom)); z-index: 60; }
 .langfab .core {
@@ -196,27 +198,39 @@ body::after {
 .bag-count.bump { animation: bump 0.4s var(--ease-io); }
 @keyframes bump { 40% { transform: scale(1.4); } }
 
-/* dedicated search row (marketplace-style: separate line under the nav) */
+/* dedicated search row — sits directly under the centred category links */
 .searchrow { border-top: 1px solid var(--line-soft); }
-.searchrow-in { display: flex; justify-content: center; padding: 10px 0 12px; }
+.searchrow-in { display: flex; justify-content: center; padding: 6px 0 12px; }
 .sline {
-  display: flex; align-items: center; gap: 10px;
-  width: min(560px, 100%);
-  height: 42px;
-  background: var(--card);
+  display: flex; align-items: center; gap: 12px;
+  width: min(520px, 100%);
+  height: 40px;
+  background: transparent;
   border: 1px solid var(--line);
   border-radius: 999px;
-  padding: 0 12px 0 18px;
-  transition: border-color 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
+  padding: 0 10px 0 20px;
+  transition: border-color 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out), background-color 0.4s;
+  animation: sline-in 0.9s var(--ease-out) 0.35s both;
 }
-.sline:focus-within { border-color: var(--ink); box-shadow: 0 0 0 3px var(--accent-soft); }
-.sline .s-ic { width: 17px; height: 17px; color: var(--ink-soft); flex: none; }
-.sline input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font-size: 14px; }
+@keyframes sline-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.sline:hover { border-color: color-mix(in srgb, var(--ink) 40%, transparent); }
+.sline:focus-within {
+  border-color: var(--ink);
+  background: var(--card);
+  box-shadow: 0 0 0 4px var(--accent-soft), 0 14px 30px rgba(20, 16, 8, 0.08);
+}
+.sline .s-ic { width: 16px; height: 16px; color: var(--ink-soft); flex: none; transition: color 0.35s, transform 0.5s var(--ease-out); }
+.sline:focus-within .s-ic { color: var(--accent); transform: rotate(-4deg) scale(1.06); }
+.sline input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font-size: 14px; caret-color: var(--accent); }
+.sline input::placeholder { color: var(--ink-soft); }
 .sline input::-webkit-search-cancel-button { display: none; }
 .sline kbd {
   font-size: 10px; color: var(--ink-soft);
   border: 1px solid var(--line); border-radius: 5px; padding: 2px 7px; flex: none;
+  transition: color 0.3s, border-color 0.3s;
 }
+.sline:focus-within kbd { color: var(--accent); border-color: var(--accent); }
+@media (prefers-reduced-motion: reduce) { .sline { animation: none; } }
 
 /* mobile hamburger */
 .burger { display: none; }
